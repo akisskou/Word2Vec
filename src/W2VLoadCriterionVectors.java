@@ -129,10 +129,5 @@ public class W2VLoadCriterionVectors {
 		       
 			criterionData = prop.getProperty("criteria")+" has no close words\n";
 		}
-		/*criterionData += "\n";
-		log.info("Writing criterion results in file...");
-		final Path path = Paths.get("criteria.txt");
-	    Files.write(path, Arrays.asList(criterionData), StandardCharsets.UTF_8,
-	        Files.exists(path) ? StandardOpenOption.APPEND : StandardOpenOption.CREATE);*/
 	}
 }

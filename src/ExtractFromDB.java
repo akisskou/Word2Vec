@@ -94,9 +94,6 @@ private static Logger log = LoggerFactory.getLogger(W2V.class);
 			final Path path = Paths.get(dbid+"/"+patient[0]+".txt");
 		    Files.write(path, Arrays.asList(patient[1].replace(",", " ").replace(" aka", "").toLowerCase()), StandardCharsets.UTF_8,
 		        Files.exists(path) ? StandardOpenOption.APPEND : StandardOpenOption.CREATE);
-			/*PrintWriter out = new PrintWriter(dbid+"/"+patient[0]+".txt");
-			out.println(patient[1].replace(",", " ").replace("(", "").replace(")", "").replace(" aka", ""));
-			out.close();*/
 		}
 		tables = "patient, cond_diagnosis,voc_medical_condition";
 		where_clause = "patient.ID = cond_diagnosis.PATIENT_ID AND cond_diagnosis.CONDITION_ID = voc_medical_condition.ID AND cond_diagnosis.STMT_ID=1";
@@ -145,18 +142,13 @@ private static Logger log = LoggerFactory.getLogger(W2V.class);
 	}
 	
 	private static void accessCohort(String mycohort) throws SQLException, JsonParseException, JsonMappingException, JSONException, IOException {
-    	//JSONObject cohortResponse = new JSONObject();
     	int mycohortid = Integer.valueOf(mycohort);
     	ConfigureFile obj;
     	if(mycohortid<10) mycohort = "chdb00"+mycohortid;
     	else mycohort = "chdb0"+mycohortid;
 		JSONObject credentials = getCredentials(mycohortid);
 		obj = new ConfigureFile("jdbc:mysql://"+credentials.getString("dbserver")+":"+credentials.getString("dbport")+"/"+credentials.getString("dbarea")+"?autoReconnect=true&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC",credentials.getString("dbuname"),credentials.getString("dbupass"));
-		//}
-    	
-		//cohortResponse.put("cohort_name", mycohort);
-		//ConfigureFile obj = new ConfigureFile("jdbc:mysql://"+credentials.getString("dbserver")+":"+credentials.getString("dbport")+"/"+credentials.getString("dbarea"),credentials.getString("dbuname"),credentials.getString("dbupass"));
-    	//ConfigureFile obj = new ConfigureFile("jdbc:mysql://ponte.grid.ece.ntua.gr:3306/Harm-DB-09", "emps", "emps");
+		
     	if(!DBServiceCRUD.makeJDBCConnection(obj)) {
     		System.out.println("Connection with the Database failed. Check the Credentials and the DB URL.");
     	}
