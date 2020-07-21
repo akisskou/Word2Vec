@@ -1,24 +1,8 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Stream;
 
-import org.json.JSONObject;
 
 import java.sql.ResultSet;
 
@@ -83,7 +67,6 @@ public class DBServiceCRUD {
 			//System.out.println("Stage-3 The query is executed.");
 			// Let's iterate through the java ResultSet
 			if (rs == null) return "";
-			boolean mycount = false;
 			String id = "";
 			String term = "";
 			while (rs.next()) {

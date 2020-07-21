@@ -16,8 +16,6 @@ import java.util.Arrays;
 import java.util.Properties;
 
 import org.apache.tomcat.util.codec.binary.Base64;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -141,7 +139,7 @@ private static Logger log = LoggerFactory.getLogger(W2V.class);
 		}
 	}
 	
-	private static void accessCohort(String mycohort) throws SQLException, JsonParseException, JsonMappingException, JSONException, IOException {
+	private static void accessCohort(String mycohort) throws SQLException, JSONException, IOException {
     	int mycohortid = Integer.valueOf(mycohort);
     	ConfigureFile obj;
     	if(mycohortid<10) mycohort = "chdb00"+mycohortid;
