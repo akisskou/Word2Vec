@@ -23,9 +23,14 @@ import org.nd4j.shade.guava.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Based on the given TXT criterion --> For each term find closest terms --> Search for them in the TXT with criteria closest terms --> Find patient IDs and save in file
+ * @author jason
+ *
+ */
 public class W2VLoadCriterionVectors {
 	
-	private static Logger log = LoggerFactory.getLogger(W2VLoadVectors.class);
+	private static Logger log = LoggerFactory.getLogger(W2VLoadCriterionVectors.class);
 	
 	private static String stopwords1 = "<=,>=,_,=,<,>,+,%, -,- , - ,—,•,…,/,#,$,&,*,\\,^,{,},~,£,§,®,°,±,³,·,½,™";
 

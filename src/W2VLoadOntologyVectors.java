@@ -27,6 +27,11 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Load Ontology Terms and find 10 closest terms
+ * @author jason
+ *
+ */
 public class W2VLoadOntologyVectors {
 
 

@@ -22,9 +22,14 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Read DB (based on properties) --> Read Patient Data and save in separate TXT Files
+ * @author jason
+ *
+ */
 public class ExtractFromDB {
 
-private static Logger log = LoggerFactory.getLogger(W2V.class);
+private static Logger log = LoggerFactory.getLogger(ExtractFromDB.class);
 	
 	private static String stopwords1 = "(,),[,],<=,>=,_,=,<,>,+,%, -,- , - ,—,•,…,/,#,$,&,*,\\,^,{,},~,£,§,®,°,±,³,·,½,™";
 

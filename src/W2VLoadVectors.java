@@ -22,7 +22,11 @@ import org.deeplearning4j.models.word2vec.Word2Vec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * Read TXT files with patient data --> For each term find closest terms
+ * @author jason
+ *
+ */
 public class W2VLoadVectors {
 
 	private static Logger log = LoggerFactory.getLogger(W2VLoadVectors.class);

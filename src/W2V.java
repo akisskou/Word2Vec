@@ -29,7 +29,11 @@ import org.w3c.dom.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * Clinical Trials GOV XML --> Text Processing --> Save in one Doc --> raw_text.txt
+ * @author jason
+ *
+ */
 public class W2V {
 	
 	private static Logger log = LoggerFactory.getLogger(W2V.class);

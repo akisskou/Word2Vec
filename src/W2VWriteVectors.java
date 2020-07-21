@@ -8,6 +8,11 @@ import org.deeplearning4j.text.tokenization.tokenizerfactory.TokenizerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Read raw_text.txt --> Generate Vectors and save to zip File 
+ * @author jason
+ *
+ */
 public class W2VWriteVectors {
 
 	private static Logger log = LoggerFactory.getLogger(W2VWriteVectors.class);
