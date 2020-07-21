@@ -56,6 +56,8 @@ public class W2VLoadCriterionVectors {
 		File vectors = new File("word_vectors.zip");
 		Word2Vec vec = WordVectorSerializer.readWord2VecModel(vectors);
 		boolean flag = false;
+		File criteriaDir = new File("chdb0"+prop.getProperty("dbid")+"/Criteria");
+		criteriaDir.mkdir();
 		for(int j=0; j<myWords.size(); j++) {
 			try {
 				/*wordList = vec.wordsNearestSum(myWords.get(j), Integer.valueOf(prop.getProperty("count")));
@@ -119,14 +121,17 @@ public class W2VLoadCriterionVectors {
 			    myReader.close();
 			}
 			log.info(criterionData);
-			final Path path = Paths.get("criteria.txt");
+			
+			final Path path = Paths.get("chdb0"+prop.getProperty("dbid")+"/Criteria/criteria.txt");
 		    Files.write(path, Arrays.asList(criterionData), StandardCharsets.UTF_8,
 		        Files.exists(path) ? StandardOpenOption.APPEND : StandardOpenOption.CREATE);
 		}
 		else {
-			log.info(prop.getProperty("criteria")+" has no close words");
-		       
-			criterionData = prop.getProperty("criteria")+" has no close words\n";
+			criterionData = prop.getProperty("criteria")+" has no close words";
+			log.info(criterionData);
+			final Path path = Paths.get("chdb0"+prop.getProperty("dbid")+"/Criteria/criteria.txt");
+		    Files.write(path, Arrays.asList(criterionData), StandardCharsets.UTF_8,
+		        Files.exists(path) ? StandardOpenOption.APPEND : StandardOpenOption.CREATE);
 		}
 	}
 }
